@@ -24,7 +24,7 @@ function onInputChange(event) {
   fetchCountries()
     /// .then(allCountries) - ссылка на функцию, когда буде вызываться прийдет результат то есть страны или одна страна
     .then(allCountries => {
-      //Отфильтрованные странные из функции filteredList
+      //Отфильтрованные страны из функции filteredList
       const filteredCountries = filteredList(allCountries);
       //Если в ответе бэкенд вернул больше чем 10 стран, в интерфейсе пояляется уведомление о том, что имя должно быть более специфичным.
       if (filteredCountries.length > 10) {
@@ -56,7 +56,7 @@ function onInputChange(event) {
 function nameAndFlagsOfCountries(allCountries) {
   const dataOfCountry = allCountries
     .map(country => {
-      return `<h2 class="country-name"><img src="${country.flags.svg}" alt="" width="30" >${country.name.official}</h2>`;
+      return `<h2 class="country-name"><img src="${country.flags.svg}" alt="" width="30" > ${country.name.official}</h2>`;
     })
     .join('');
   refs.countryInfo.innerHTML = '';
@@ -69,19 +69,19 @@ function dataForOneCountry(allCountries) {
     .map(country => {
       return `<h2 class="country-name"><img src="${
         country.flags.svg
-      }" alt="" width="30" >${country.name.official}</h2>
+      }" alt="" width="30" > ${country.name.official}</h2>
         <li class="country-info-item">
-          <p class="country-text">Capital: <span>${
+          <p class="country-text">Capital: <span class="sp-text">${
             country.capital[0]
           }</span></p>
         </li>
         <li class="country-info-item">
-          <p class="country-text">Population: <span>${
+          <p class="country-text">Population: <span class="sp-text">${
             country.population
           }</span></p>
         </li>
         <li class="country-info-item">
-          <p class="country-text">Languages: <span>${Object.values(
+          <p class="country-text">Languages: <span class="sp-text">${Object.values(
             country.languages
           )}</span></p>
         </li>

@@ -22,6 +22,9 @@ body {
   list-style: none;
 }
 .country-text {
-  font-size: 24px;
+  font-size: 14px;
   font-weight: bold;
+}
+.sp-text {
+  font-weight: normal;
 }
